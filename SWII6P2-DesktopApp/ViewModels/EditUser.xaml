@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SWII6P2_DesktopApp.ViewModels.EditUser"
+             Title="Editar Usuário">
+    <VerticalStackLayout Spacing="20" Padding="20">
+        <Grid ColumnSpacing="10" RowSpacing="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Nome -->
+            <Label Text="Nome:" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="End"/>
+            <Entry Text="{Binding Name}" Grid.Column="1" Grid.Row="0" VerticalOptions="Center" x:Name="EntryName"/>
+
+            <!-- Senha -->
+            <Label Text="Senha:" Grid.Column="0" Grid.Row="1" VerticalOptions="Center" HorizontalOptions="End"/>
+            <Entry Text="{Binding Password}" Grid.Column="1" Grid.Row="1" VerticalOptions="Center" x:Name="EntryPassword"/>
+
+            <!-- Status -->
+            <Label Text="Status:" Grid.Column="0" Grid.Row="2" VerticalOptions="Center" HorizontalOptions="End"/>
+            <Switch IsToggled="{Binding Status}"  Grid.Column="1" Grid.Row="2" VerticalOptions="Center" HorizontalOptions="Start" x:Name="SwitchStatus"/>
+        </Grid>
+
+        <!-- Botões -->
+        <HorizontalStackLayout Spacing="20" HorizontalOptions="Center">
+            <Button Text="Editar" Clicked="OnEditClicked" WidthRequest="100"/>
+            <Button Text="Cancelar" Clicked="OnCancelClicked" WidthRequest="100"/>
+            <Button Text="Excluir" Clicked="OnDeleteClicked" WidthRequest="100" BackgroundColor="Red"/>
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

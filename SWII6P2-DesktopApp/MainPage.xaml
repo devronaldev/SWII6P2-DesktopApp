@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SWII6P2_DesktopApp.MainPage"
+             Title="Página Inicial">
+
+    <ScrollView>
+        <VerticalStackLayout>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1080"/>
+                </Grid.ColumnDefinitions>
+
+                <ListView SeparatorVisibility="Default" x:Name="TaskListView" ItemTapped="OnUserSelected" Grid.Row="0" MinimumWidthRequest="520" HorizontalOptions="Center" VerticalOptions="Start">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="20">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="200"/>
+                                        <!-- Coluna para rótulos -->
+                                        <ColumnDefinition Width="*"/>
+                                        <!-- Coluna flexível para valores -->
+                                    </Grid.ColumnDefinitions>
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <!-- Linha para ID -->
+                                        <RowDefinition Height="Auto"/>
+                                        <!-- Linha para Nome -->
+                                        <RowDefinition Height="Auto"/>
+                                        <!-- Linha para Senha -->
+                                        <RowDefinition Height="Auto"/>
+                                        <!-- Linha para Status -->
+                                    </Grid.RowDefinitions>
+
+                                    <!-- ID -->
+                                    <Label Text="Id:" Grid.Row="0" Grid.Column="0" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="End" Margin="0,0,10,0"/>
+                                    <Label Text="{Binding Id}" Grid.Row="0" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Start"/>
+
+                                    <!-- Nome -->
+                                    <Label Text="Nome:" Grid.Row="1" Grid.Column="0" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="End" Margin="0,0,10,0"/>
+                                    <Label Text="{Binding Name}" Grid.Row="1" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Start"/>
+
+                                    <!-- Senha -->
+                                    <Label Text="Senha:" Grid.Row="2" Grid.Column="0" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="End" Margin="0,0,10,0"/>
+                                    <Label Text="{Binding Password}" Grid.Row="2" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Start"/>
+
+                                    <!-- Status -->
+                                    <Label Text="Status:" Grid.Row="3" Grid.Column="0" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="End" Margin="0,0,10,0"/>
+                                    <Label Text="{Binding Status}" Grid.Row="3" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Start"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <Button Text="Criar novo usuário" Clicked="OnCreateClicked" Grid.Row="1" Margin="10" HorizontalOptions="Center" VerticalOptions="End"/>
+                <Button Text="Créditos" Clicked="OnCreditsClicked" Grid.Row="2" Margin="10" HorizontalOptions="Center" VerticalOptions="End"/>
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
