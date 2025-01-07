@@ -23,6 +23,7 @@ A aplicação Desktop oferece as seguintes funcionalidades:
 - **API RESTful (ASP.NET Core):** A aplicação se comunica com a API que gerencia os dados de usuários e produtos.
 - **HTTP Client:** Utilizado para fazer requisições HTTP para a API.
 
+## Créditos
 <table>
   <tr>
     <td>
